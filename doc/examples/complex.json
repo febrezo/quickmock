@@ -1,0 +1,88 @@
+{
+    "host": "0.0.0.0",
+    "port": 6000,
+    "responses": {
+        "GET": {
+            "simple/1": [
+                {
+                    "checks": {},
+                    "response": {
+                        "status": 200,
+                        "return": {
+                            "name": "James Bond"
+                        },
+                        "mimetype": "application/json"
+                    }
+                }
+            ],
+            "with_checks/1": [
+                {
+                    "checks": {
+                        "headers": {
+                            "valid": {},
+                            "error": {
+                                "status": 400,
+                                "return": {
+                                    "msg": "Wrong headers"
+                                },
+                                "mimetype": "application/json"
+                            }
+                        },
+                        "data": {
+                            "valid": {},
+                            "error": {
+                                "status": 400,
+                                "return": {
+                                    "msg": "Wrong data"
+                                },
+                                "mimetype": "application/json"
+                            }
+                        }
+                    },
+                    "response": {
+                        "status": 200,
+                        "return": {
+                            "name": "James Bond"
+                        },
+                        "mimetype": "application/json"
+                    }
+                }
+            ],
+            "info/1001": [
+                {
+                    "checks": {
+                        "headers": {
+                            "valid": {"User-Agent": "Mozilla"},
+                            "error": {
+                                "status": 400,
+                                "return": {
+                                    "msg": "Wrong headers"
+                                },
+                                "mimetype": "application/json"
+                            }
+                        },
+                        "data": {
+                            "valid": {},
+                            "error": {
+                                "status": 400,
+                                "return": {
+                                    "msg": "Wrong data"
+                                },
+                                "mimetype": "application/json"
+                            }
+                        }
+                    },
+                    "response": {
+                        "status": 404,
+                        "return": {
+                            "code": 404,
+                            "message": "User not found"
+                        },
+                        "mimetype": "application/json"
+                    }
+                }
+            ]
+        }
+    }
+}
+

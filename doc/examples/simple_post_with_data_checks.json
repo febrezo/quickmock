@@ -1,0 +1,29 @@
+{
+    "host": "0.0.0.0",
+    "port": 6000,
+    "responses": {
+        "POST": {
+            "add": [
+                {
+                    "checks": {
+                        "data": {
+                            "valid": {"name": "Kevin Mitnick"},
+                            "error": {
+                                "status": 400,
+                                "return": {
+                                    "msg": "Wrong headers"
+                                },
+                                "mimetype": "application/json"
+                            }
+                        }
+                    },
+                    "response": {
+                        "status": 202,
+                        "return": "OK.",
+                        "mimetype": "text/html"
+                    }
+                }
+            ]
+        }
+    }
+}
